@@ -39,6 +39,22 @@ React permite una interfaz reactiva y en tiempo real que se actualiza instantán
 - **Estilizado**: **Tailwind CSS** + **Headless UI** para componentes accesibles.
 - **Despliegue**: **Vercel** (frontend) + **Railway** (backend proxy para IA).
 
+## 5. Diagrama de Flujo de Datos (Boceto)
+
+
+    A[Usuario ingresa tarea: “Planificar viaje”] --> B{¿Es tarea compleja?}
+    B -->|Sí| C[Llamada a OpenAI API vía backend]
+    C --> D[IA sugiere subtareas: “comprar vuelo”, “reservar hotel”, …]
+    D --> E[Estado global actualiza lista de tareas]
+    E --> F[Interfaz se re-renderiza con subtareas sugeridas]
+
+    G[Usuario completa tarea] --> H[IA verifica carga de trabajo]
+    H --> I{¿Hay sobrecarga?}
+    I -->|Sí| J[Alerta visual: “Considera posponer tarea X”]
+    I -->|No| K[Estado marca tarea como completada]
+    
+    L[Filtro: “Ver sugerencias de IA”] --> M[Componente muestra tareas optimizadas por IA]
+
 
  
 
